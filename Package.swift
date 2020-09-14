@@ -3,14 +3,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "FGF-Turbolinks-iOS",
+    name: "Turbolinks",
     platforms: [
         .iOS(.v12)
     ],
     products: [
         .library(
-            name: "FGF-Turbolinks-iOS",
-            targets: ["FGF-Turbolinks-iOS"]),
+            name: "Turbolinks",
+            targets: ["Turbolinks"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -18,10 +19,15 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "FGF-Turbolinks-iOS",
-            dependencies: []),
+            name: "Turbolinks",
+            dependencies: [],
+            resources: [
+                .copy("WebView.js")
+            ]
+        ),
         .testTarget(
-            name: "FGF-Turbolinks-iOSTests",
-            dependencies: ["FGF-Turbolinks-iOS"]),
+            name: "TurbolinksTests",
+            dependencies: ["Turbolinks"]
+        ),
     ]
 )
