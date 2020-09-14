@@ -22,7 +22,7 @@ let package = Package(
             name: "Turbolinks",
             dependencies: [],
             resources: [
-                .copy("WebView.js")
+                .process("Resources/WebView.js")
             ]
         ),
         .testTarget(
